@@ -1,5 +1,6 @@
 import Image from 'next/image';
 
+
 import React from 'react';
 
 
@@ -26,7 +27,7 @@ const HeroPage = () => {
 
                        
 
-                        <button className='bg-green-700 rounded-[20px] text-white p-3 mt-3 mb-10'>সব পণ্য দেখুন</button>
+                     <button className='bg-green-700 rounded-[20px] text-white p-3 mt-3 mb-10'>সব পণ্য দেখুন</button> 
 
                        
 

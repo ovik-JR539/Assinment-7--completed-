@@ -13,6 +13,7 @@ const MarQuee = async () => {
     console.log(data)
 
     return (
+        
         <div className="border bg-gray-300">
 
 
