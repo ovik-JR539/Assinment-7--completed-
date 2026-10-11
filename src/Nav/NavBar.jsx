@@ -13,13 +13,11 @@ import { authClient } from '@/lib/auth-client';
 
 const NavBar = () => {
 
-    // const date = new Date().toLocaleDateString("bn-BD", { dateStyle: "full" })
+    const date = new Date().toLocaleDateString("bn-BD", { dateStyle: "full" })
     // const { data: session } = authClient.useSession()
     // console.log(session)
 
-    const date = new Date().toLocaleDateString("en-GB", {
-    dateStyle: "full",
-});
+
 
     
 
