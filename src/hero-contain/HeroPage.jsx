@@ -3,14 +3,15 @@
 import Image from 'next/image';
 
 
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 
 
 const HeroPage = () => {
+    const [date, setDate] = useState("");
 
-     const date = new Date().toLocaleDateString("bn-BD", { dateStyle: "full" })
-
-    console.log(date)
+    useEffect(() => {
+        setDate(new Date().toLocaleDateString("bn-BD", { dateStyle: "full" }));
+    }, []);
 
     return (
         <div className='w-full max-w-7xl mx-auto mx-2 my-15 '>

@@ -4,13 +4,8 @@ import React from 'react';
 
 const MarQuee = async () => {
 
-    const res = await fetch("https://api.abcz.workers.dev/api/bazardor/products")
-    const data = await res.json()
-
-    // https://api.api-store.workers.dev/api/bazardor/products
-
-
-    console.log(data)
+    const res = await fetch("https://api.abcz.workers.dev/api/bazardor/products");
+    const data = await res.json();
 
     return (
         

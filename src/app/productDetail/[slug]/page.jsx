@@ -1,4 +1,5 @@
 
+import Link from "next/link";
 import React from "react";
 
 const DetailPage = async ({ params }) => {
@@ -6,13 +7,31 @@ const DetailPage = async ({ params }) => {
 
     const res = await fetch("https://api.abcz.workers.dev/api/bazardor/products");
 
-    // https://api.api-store.workers.dev/api/bazardor/products
-
     const data = await res.json();
 
-    const product = data.find((item) => {
-        return item.id === Number(slug);
-    });
+    const product = Array.isArray(data)
+        ? data.find((item) => item.id === Number(slug) || item.slug === slug)
+        : null;
+
+    if (!product) {
+        return (
+            <div className='w-full max-w-7xl mx-auto px-2 py-10 text-center'>
+                <div className='bg-white border rounded-[15px] shadow p-10 max-w-lg mx-auto'>
+                    <div className='text-6xl mb-4'>🔍</div>
+                    <h2 className='text-2xl font-bold mb-2'>পণ্যটি পাওয়া যায়নি</h2>
+                    <p className='text-gray-500 mb-6'>
+                        অনুরোধকৃত পণ্যটি খুঁজে পাওয়া যায়নি।
+                    </p>
+                    <Link
+                        href="/"
+                        className='bg-green-700 text-white px-5 py-2.5 rounded-xl font-medium inline-block hover:bg-green-800 transition'
+                    >
+                        হোম পেজে ফিরে যান
+                    </Link>
+                </div>
+            </div>
+        );
+    }
 
   
 
